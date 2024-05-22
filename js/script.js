@@ -17,12 +17,12 @@ const ourTeam = [
     {
         nome : "Angela Lopez" , 
         ruolo : "Social Media Manager",
-        immagine : "scott-estrada-developer.jpg",
+        immagine : "angela-lopez-social-media-manager.jpg",
     },
     {
         nome : "Scott Estrada" , 
         ruolo : "Developer",
-        immagine : "wayne-barnett-founder-ceo.jpg",
+        immagine : "scott-estrada-developer.jpg",
     },
     {
         nome : "Barbara Ramos" , 
@@ -38,9 +38,16 @@ const container = document.querySelector("div.container")
 console.log(container)
 for (let i = 0 ; i < ourTeam.length ; i++){
     let article = document.createElement("article");
+    let myImg = new Image();
+    myImg.src = "./img/"+ourTeam[i].immagine ;
+    let name = document.createElement("h2");
+    let role = document.createElement("div");
+    article.appendChild(myImg)
+    article.appendChild(name)
+    article.appendChild(role)
     container.appendChild(article);
-    article.append(ourTeam[i].immagine ,  "/" , ourTeam[i].nome ,  "/" , ourTeam[i].ruolo)
-    
+    name.append(ourTeam[i].nome)
+    role.append(ourTeam[i].ruolo)
     console.log(ourTeam[i].nome)
     console.log(ourTeam[i].ruolo)
     console.log(ourTeam[i].immagine)
