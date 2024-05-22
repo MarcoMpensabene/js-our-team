@@ -33,7 +33,14 @@ const ourTeam = [
 
 console.log(ourTeam)
 
+const container = document.querySelector("div.container")
+
+console.log(container)
 for (let i = 0 ; i < ourTeam.length ; i++){
+    let article = document.createElement("article");
+    container.appendChild(article);
+    article.append(ourTeam[i].immagine ,  "/" , ourTeam[i].nome ,  "/" , ourTeam[i].ruolo)
+    
     console.log(ourTeam[i].nome)
     console.log(ourTeam[i].ruolo)
     console.log(ourTeam[i].immagine)
